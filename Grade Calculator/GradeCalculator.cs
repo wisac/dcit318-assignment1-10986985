@@ -18,11 +18,11 @@ public class GradeCalculator
          return invalidScore;
       }
 
-      bool validInput = double.TryParse(input, NumberStyles.Number, CultureInfo.InvariantCulture, out double result);
+      bool validInput = double.TryParse(input, NumberStyles.Number, CultureInfo.InvariantCulture, out double score);
 
       if (validInput)
       {
-         if (result < 0 || result > 100)
+         if (score < 0 || score > 100)
          {
             Console.WriteLine("Score cannot be less than 0 or greater than 100");
             return invalidScore;
@@ -34,7 +34,7 @@ public class GradeCalculator
          return invalidScore;
       }
 
-      return result;
+      return score;
    }
 
 
