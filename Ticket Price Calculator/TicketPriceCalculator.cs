@@ -6,18 +6,21 @@ public class TicketPriceCalculator
 {
    public static int InputAge()
    {
+      // flag for invalid age
       int invalidAge = -1;
 
       Console.WriteLine("Enter your age:");
 
       string? input = Console.ReadLine();
 
+      // When user does not enter any value
       if (string.IsNullOrWhiteSpace(input))
       {
          Console.WriteLine("Please enter a valid age.");
          return invalidAge;
       }
 
+      // Parse input string to int if valid
       bool validInput = int.TryParse(input, NumberStyles.Integer, CultureInfo.InvariantCulture, out int age);
 
       if (validInput)
@@ -38,7 +41,7 @@ public class TicketPriceCalculator
    }
 
    public static decimal CalculateTicketPrice(int age)
-   {
+   {  
       if(age == -1) {
          Console.WriteLine("Age is invalid");
          return 0;

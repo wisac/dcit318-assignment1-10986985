@@ -18,10 +18,12 @@ public class GradeCalculator
          return invalidScore;
       }
 
+      // parse  input to double if valid
       bool validInput = double.TryParse(input, NumberStyles.Number, CultureInfo.InvariantCulture, out double score);
 
       if (validInput)
       {
+         // apply marks constrain
          if (score < 0 || score > 100)
          {
             Console.WriteLine("Score cannot be less than 0 or greater than 100");
