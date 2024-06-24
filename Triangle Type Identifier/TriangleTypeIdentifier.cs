@@ -17,8 +17,6 @@ public class TriangleTypeIdentifier
       {
          triangleType = TriangleType.Equilateral;
       }
-
-
       return triangleType;
    }
 

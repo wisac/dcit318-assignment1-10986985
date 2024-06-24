@@ -4,10 +4,10 @@ namespace Ticket_Price_Calculator;
 
 public class TicketPriceCalculator
 {
-   public static int InputAge()
+   public static int? InputAge()
    {
       // flag for invalid age
-      int invalidAge = -1;
+      int? invalidAge = null;
 
       Console.WriteLine("Enter your age:");
 
@@ -40,15 +40,17 @@ public class TicketPriceCalculator
 
    }
 
-   public static decimal CalculateTicketPrice(int age)
-   {  
-      if(age == -1) {
+   public static string CalculateTicketPrice(int? age)
+   {
+      if (age == null) {
          Console.WriteLine("Age is invalid");
-         return 0;
+         return "Invalid";
       }
       decimal discount = age >= 65 || age <= 12 ? 7m : 0;
 
-      return 10m - discount;
+      decimal price = 10m - discount;
+
+      return price.ToString("C", CultureInfo.CreateSpecificCulture("en-GH")); 
    }
 
 }

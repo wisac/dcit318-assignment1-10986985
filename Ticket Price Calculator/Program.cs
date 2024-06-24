@@ -2,12 +2,14 @@
 using Ticket_Price_Calculator;
 
 // take input age
-int age = TicketPriceCalculator.InputAge();
+int? age = TicketPriceCalculator.InputAge();
 
 // calculate price
-decimal price = TicketPriceCalculator.CalculateTicketPrice(age);
+string priceInfo = TicketPriceCalculator.CalculateTicketPrice(age);
+
+   
+Console.WriteLine($"Your ticket price is: {priceInfo}");
 
 // display price in GHC
-Console.WriteLine($"Your ticket price is: {price.ToString("C", CultureInfo.CreateSpecificCulture("en-GH"))}");
 
 
